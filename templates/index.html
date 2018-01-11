@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>心理疾病</title>
+    <link href="/static/css/font-awesome.css" rel="stylesheet">
+    <!--<link href="/static/css/simpe-line-icons.css" rel="stylesheet">-->
+    <!--<link href="/static/css/swiper.css" rel="stylesheet">-->
+    <link href="/static/css/swiper.min.css" rel="stylesheet">
+    <link href="/static/css/toastr_custom.css" rel="stylesheet">
+    <link href="/static/css/home16madgirl.css" rel="stylesheet">
+    <!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+</head>
+<body>
+
+<div id="wrap" class="swiper-container swiper-container-horizontal">
+    <div class="bg item1 swiper-wrapper">
+        <style>
+            .item1 {
+                background: url(./static/image/autism_1.jpg) no-repeat top center;
+                background-size: cover
+            }
+
+            .item2 {
+                background: url(./static/image/depression_1.jpg) no-repeat top center;
+                background-size: cover
+            }
+
+            .item3 {
+                background: url(./static/image/schizophrenia_1.jpg) no-repeat top center;
+                background-size: cover
+            }
+
+            .item4 {
+                background: url(./static/image/concern_1.jpg) no-repeat top center;
+                background-size: cover
+            }
+
+            @media (max-width: 800px) {
+                /* Mobile */
+                /*#section1 .info{ display: none;}*/
+                #section1 {
+                    background: url(./static/image/autism_1.jpg) no-repeat top center;
+                    background-size: cover;
+                }
+
+                #section2 {
+                    background: url(./static/image/depression_1.jpg) no-repeat top center;
+                    background-size: cover;
+                }
+
+                #section3 {
+                    background: url(./static/image/schizophrenia_1.jpg) no-repeat top center;
+                    background-size: cover;
+                }
+
+                #section4 {
+                    background: url(./static/image/concern_1.jpg) no-repeat top center;
+                    background-size: cover;
+                }
+            }
+
+            .fullscreen-bg {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                overflow: hidden;
+                z-index: -100;
+                background-color: black;
+            }
+
+            .fullscreen-bg__video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 117.8%;
+                opacity: 0.6;
+            }
+
+            @media (min-aspect-ratio: 16/9) {
+                .fullscreen-bg__video {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+
+            @media (max-aspect-ratio: 16/9) {
+                .fullscreen-bg__video {
+                    width: auto;
+                    height: 100%;
+                }
+            }
+
+            .on {
+                display: block;
+            }
+
+            .hiddenimage {
+                display: none;
+            }
+        </style>
+
+        <div id="section1" class="shop_section swiper-slide section1_clickarea swiper-slide-active"
+             style="width:1273px;">
+            <img class="hiddenimage" src="/static/image/autism_1.jpg">
+            <img class="hiddenimage current" src="/static/image/autism_2.jpg">
+            <img class="hiddenimage" src="/static/image/autism_3.jpg">
+            <div class="info">
+                <p><strong>自闭症</strong></p>
+                <a href="/autism" class="btn section1_clickarea" style="width:95px">进入</a>
+            </div>
+            <p class="madness">Madness</p>
+        </div>
+
+        <div id="section2" class="shop_section swiper-slide section2_clickarea swiper-slide-next" style="width:1273px;">
+            <img class="hiddenimage" src="/static/image/depression_1.jpg">
+            <img class="hiddenimage current" src="/static/image/depression_2.jpg">
+            <img class="hiddenimage" src="/static/image/depression_3.jpg">
+            <div class="info">
+                <p><strong>抑郁症</strong></p>
+                <a href="/depression" class="btn section1_clickarea" style="width:95px">进入</a>
+            </div>
+        </div>
+
+        <div id="section3" class="shop_section swiper-slide section2_clickarea swiper-slide-next" style="width:1273px;">
+            <img class="hiddenimage" src="/static/image/schizophrenia_1.jpg">
+            <img class="hiddenimage current" src="/static/image/schizophrenia_2.jpg">
+            <img class="hiddenimage" src="/static/image/schizophrenia_3.jpg">
+            <div class="info">
+                <p><strong>精神分裂症</strong></p>
+                <a href="/schizophrenia" class="btn section1_clickarea" style="width:95px">进入</a>
+            </div>
+        </div>
+
+        <div id="section4" class="shop_section swiper-slide section2_clickarea swiper-slide-next" style="width:1273px;">
+            <img class="hiddenimage" src="/static/image/concern_1.jpg">
+            <img class="hiddenimage current" src="/static/image/concern_2.jpg">
+            <img class="hiddenimage" src="/static/image/concern_3.jpg">
+            <div class="info">
+                <p><strong>关 爱</strong></p>
+                <a href="/concern" class="btn section1_clickarea" style="width:95px">进入</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="/static/js/autism/jquery.js"></script>
+<script src="/static/js/swiper.jquery.min.js"></script>
+<script src="/static/js/toastr.js"></script>
+<script src="/static/js/swiper.js"></script>
+<script>
+    $('#section1').hover(function () {
+        timer = setInterval(function () {
+            var currentimg = $('#section1 .hiddenimage.current');
+            $('.item1').css('background-image', 'url(' + currentimg.attr('src') + ')');
+            currentimg.removeClass('current');
+            $next = currentimg.next('#section1 .hiddenimage');
+            if ($next.length) {
+                $next.addClass('current');
+            } else {
+                $('#section1 .hiddenimage:first').addClass('current');
+            }
+        }, 1500);
+    }, function () {
+        clearInterval(timer);
+        $('.item1').css('background-image', '');
+    });
+
+    $('#section2').hover(function () {
+        $('.bg').toggleClass('item2');
+        timer = setInterval(function () {
+            var currentimg = $('#section2 .hiddenimage.current');
+            $('.item2').css('background-image', 'url(' + currentimg.attr('src') + ')');
+            currentimg.removeClass('current');
+            $next = currentimg.next('#section2 .hiddenimage');
+            if ($next.length) {
+                $next.addClass('current');
+            } else {
+                $('#section2 .hiddenimage:first').addClass('current');
+            }
+        }, 1500);
+    }, function () {
+        clearInterval(timer);
+        $('.item2').css('background-image', '');
+        $('.bg').toggleClass('item2');
+    })
+
+    $('#section3').hover(function () {
+        $('.bg').toggleClass('item3');
+        timer = setInterval(function () {
+            var currentimg = $('#section3 .hiddenimage.current');
+            $('.item3').css('background-image', 'url(' + currentimg.attr('src') + ')');
+            currentimg.removeClass('current');
+            $next = currentimg.next('#section3 .hiddenimage');
+            if ($next.length) {
+                $next.addClass('current');
+            } else {
+                $('#section3 .hiddenimage:first').addClass('current');
+            }
+        }, 1500);
+    }, function () {
+        clearInterval(timer);
+        $('.item3').css('background-image', '');
+        $('.bg').toggleClass('item3');
+    })
+
+    $('#section4').hover(function () {
+        $('.bg').toggleClass('item4');
+        timer = setInterval(function () {
+            var currentimg = $('#section4 .hiddenimage.current');
+            $('.item4').css('background-image', 'url(' + currentimg.attr('src') + ')');
+            currentimg.removeClass('current');
+            $next = currentimg.next('#section4 .hiddenimage');
+            if ($next.length) {
+                $next.addClass('current');
+            } else {
+                $('#section4 .hiddenimage:first').addClass('current');
+            }
+        }, 1500);
+    }, function () {
+        clearInterval(timer);
+        $('.item4').css('background-image', '');
+        $('.bg').toggleClass('item4');
+    })
+
+    $('.section1_clickarea').click(function () {
+
+    });
+
+    $('.section2_clickarea').click(function () {
+
+    });
+
+    $('.section3_clickarea').click(function () {
+
+    });
+
+    $('.section4_clickarea').click(function () {
+
+    });
+</script>
+
+<!--if we need pagination-->
+<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+    <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+    <span class="swiper-pagination-bullet"></span>
+    <span class="swiper-pagination-bullet"></span>
+    <span class="swiper-pagination-bullet"></span>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $(".btn_menu, .btn_close").click(function () {
+            $('.sidemenu').toggleClass("on");
+        });
+
+        $('.mybag').click(function () {
+            if (0 == $('.counttotal').html()) {
+                // alert('test1');
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    //"positionClass": "toast-top-full-width",
+                    "positionClass": "toast-top-center",
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "3000",
+                    "extendedTimeOut": "2000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+                toastr.warning('You have no items in your shopping cart.');
+
+                return false;
+            } else {
+                window.location = "/shopping-cart";
+            }
+        });
+
+
+        // For mobile
+        //initialize swiper when document ready
+        var mySwiper = new Swiper('.swiper-container', {
+            // Optional parameters
+            // direction: 'vertical',
+            // loop: true,
+            pagination: '.swiper-pagination',
+            paginationClickable: true
+        })
+    });
+
+</script>
+
+</body>
+</html>
