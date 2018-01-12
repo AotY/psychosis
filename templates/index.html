@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>心理疾病</title>
+    <title>心理疾病简介</title>
     <link href="/static/css/font-awesome.css" rel="stylesheet">
     <!--<link href="/static/css/simpe-line-icons.css" rel="stylesheet">-->
     <!--<link href="/static/css/swiper.css" rel="stylesheet">-->
@@ -113,7 +112,6 @@
                 <p><strong>自闭症</strong></p>
                 <a href="/autism" class="btn section1_clickarea" style="width:95px">进入</a>
             </div>
-            <p class="madness">Madness</p>
         </div>
 
         <div id="section2" class="shop_section swiper-slide section2_clickarea swiper-slide-next" style="width:1273px;">
@@ -154,6 +152,7 @@
 <script src="/static/js/swiper.jquery.min.js"></script>
 <script src="/static/js/toastr.js"></script>
 <script src="/static/js/swiper.js"></script>
+
 <script>
     $('#section1').hover(function () {
         timer = setInterval(function () {
@@ -169,7 +168,6 @@
         }, 1500);
     }, function () {
         clearInterval(timer);
-        $('.item1').css('background-image', '');
     });
 
     $('#section2').hover(function () {
@@ -189,7 +187,7 @@
         clearInterval(timer);
         $('.item2').css('background-image', '');
         $('.bg').toggleClass('item2');
-    })
+    });
 
     $('#section3').hover(function () {
         $('.bg').toggleClass('item3');
@@ -208,7 +206,7 @@
         clearInterval(timer);
         $('.item3').css('background-image', '');
         $('.bg').toggleClass('item3');
-    })
+    });
 
     $('#section4').hover(function () {
         $('.bg').toggleClass('item4');
@@ -227,22 +225,6 @@
         clearInterval(timer);
         $('.item4').css('background-image', '');
         $('.bg').toggleClass('item4');
-    })
-
-    $('.section1_clickarea').click(function () {
-
-    });
-
-    $('.section2_clickarea').click(function () {
-
-    });
-
-    $('.section3_clickarea').click(function () {
-
-    });
-
-    $('.section4_clickarea').click(function () {
-
     });
 </script>
 
@@ -300,6 +282,7 @@
     });
 
 </script>
+
 
 </body>
 </html>

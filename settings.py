@@ -122,7 +122,7 @@ DATABASES = {
         'NAME': 'lycan',
         'USER': 'xjtu',
         'PASSWORD': 'xjtuxjtu',
-        'HOST': '192.168.246.211',
+        'HOST': '192.168.246.212',
         'PORT': '3306',
     }
 }

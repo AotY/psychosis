@@ -1,12 +1,14 @@
 (function ($) {
 
 	$(window).scroll(function(){
-		if ($(this).scrollTop() > 100) {
+
+	    if ($(this).scrollTop() > 100) {
 			$('.scrollup').fadeIn();
 			} else {
 				$('.scrollup').fadeOut();
 			}
 		});
+
 		$('.scrollup').click(function(){
 			$("html, body").animate({ scrollTop: 0 }, 1000);
 				return false;
@@ -35,9 +37,6 @@
         });
 
         $('#filter a').click(function(){
-
-
-
             $('#filter a').removeClass('current');
             $(this).addClass('current');
             var selector = $(this).attr('data-filter');
@@ -92,7 +91,7 @@
 
 
 	//scroll menu
-	jQuery('.appear').appear();
+	jQuery(".appear").appear();
 	jQuery(".appear").on("appear", function(data) {
 			var id = $(this).attr("id");
 			jQuery('.nav li').removeClass('active');
