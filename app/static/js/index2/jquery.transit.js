@@ -12,9 +12,9 @@
 ;(function (root, factory) {
 
   if (typeof define === 'function' && define.amd) {
-    define(['jquery'], factory);
+    define(['app/static/js/index2/jquery.min'], factory);
   } else if (typeof exports === 'object') {
-    module.exports = factory(require('jquery'));
+    module.exports = factory(require('app/static/js/index2/jquery.min'));
   } else {
     factory(root.jQuery);
   }

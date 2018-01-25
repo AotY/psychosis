@@ -4,9 +4,11 @@ from common.mymako import render_mako_context
 
 # Create your views here.
 
+def welcome(request):
+    return render_mako_context(request, 'welcome.html', {})
+
 def index(request):
     return render_mako_context(request, 'index.html', {})
-
 
 # 孤独症；儿童孤独症；孤独性
 def autism(request):

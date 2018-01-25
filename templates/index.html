@@ -2,13 +2,10 @@
 <head>
     <title>心理疾病简介</title>
     <link rel="shortcut icon" href="/static/image/logo.png">
-    <link href="/static/css/font-awesome.css" rel="stylesheet">
-    <!--<link href="/static/css/simpe-line-icons.css" rel="stylesheet">-->
-    <!--<link href="/static/css/swiper.css" rel="stylesheet">-->
+    <link href="/static/css/font-awesome.min.css" rel="stylesheet">
     <link href="/static/css/swiper.min.css" rel="stylesheet">
-    <link href="/static/css/toastr_custom.css" rel="stylesheet">
-    <link href="/static/css/home16madgirl.css" rel="stylesheet">
-    <!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+    <link href="/static/css/toastr_custom.min.css" rel="stylesheet">
+    <link href="/static/css/home16madgirl.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 </head>
 <body>
@@ -149,10 +146,9 @@
 
 </div>
 
-<script src="/static/js/autism/jquery.js"></script>
+<script src="/static/js/autism/jquery.min.js"></script>
 <script src="/static/js/swiper.jquery.min.js"></script>
-<script src="/static/js/toastr.js"></script>
-<script src="/static/js/swiper.js"></script>
+<script src="/static/js/toastr.min.js"></script>
 
 <script>
     $('#section1').hover(function () {
@@ -239,38 +235,6 @@
 
 <script>
     $(document).ready(function () {
-
-        $(".btn_menu, .btn_close").click(function () {
-            $('.sidemenu').toggleClass("on");
-        });
-
-        $('.mybag').click(function () {
-            if (0 == $('.counttotal').html()) {
-                // alert('test1');
-                toastr.options = {
-                    "closeButton": false,
-                    "debug": false,
-                    //"positionClass": "toast-top-full-width",
-                    "positionClass": "toast-top-center",
-                    "onclick": null,
-                    "showDuration": "300",
-                    "hideDuration": "1000",
-                    "timeOut": "3000",
-                    "extendedTimeOut": "2000",
-                    "showEasing": "swing",
-                    "hideEasing": "linear",
-                    "showMethod": "fadeIn",
-                    "hideMethod": "fadeOut"
-                };
-                toastr.warning('You have no items in your shopping cart.');
-
-                return false;
-            } else {
-                window.location = "/shopping-cart";
-            }
-        });
-
-
         // For mobile
         //initialize swiper when document ready
         var mySwiper = new Swiper('.swiper-container', {
