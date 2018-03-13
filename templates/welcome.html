@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="/static/css/autism/bootstrap-theme.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/depression/style.min.css" type="text/css">
     <link rel="stylesheet" href="/static/css/autism/font-awesome-4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/plyr.css" type="text/css">
     <!-- skin -->
     <link rel="stylesheet" href="/static/css/depression/default.min.css" type="text/css">
     <style type="text/css">.fancybox-margin {
@@ -41,6 +42,17 @@
         color: #757575;
     }
 
+    /* This is purely for the demo */
+    .video-container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .plyr {
+        border-radius: 4px;
+        margin-bottom: 15px;
+    }
+
 
     </style>
 
@@ -52,6 +64,7 @@
             var s = document.getElementsByTagName("script")[0];
             s.parentNode.insertBefore(hm, s);
         })();
+
     </script>
 
 
@@ -99,7 +112,7 @@
                     <p>
                         心理疾病相当常见，全世界大部份的国家，有三分之一的人在一生中有某种程度的心理疾病。在我国各类精神疾病患者超1亿，美国有46%的人有某种程度的心理疾病（数据来自维基百科）。
                     </p>
-
+                    <a class="btn btn-light btn-xl sr-button" href="#concern" style="font-size: 16px">关爱活动</a>
                 </div>
             </div>
         </div>
@@ -121,7 +134,7 @@
 
                     </p>
 
-                    <a class="btn btn-light btn-xl sr-button" href="/concern">了解更多</a>
+                    <a class="btn btn-light btn-xl sr-button" href="/concern" style="font-size: 18px">了解更多</a>
                 </div>
             </div>
         </div>
@@ -131,10 +144,27 @@
 
 <section>
     <div class="align-center" style="text-align:center">
-        <h3>心理健康宣传片</h3>
-        <video width="800" controls>
+        <h2 class="slogan">心理健康宣传片</h2>
+        <!--<video width="800" controls>
             <source src="/static/video/concern.mp4" type="video/mp4">
-        </video>
+        </video>-->
+
+        <!--<video playsinline controls loop muted style="min-width:100%; min-height:100%;">
+            <source type="video/mp4" src="/static/video/concern.mp4">
+        </video>-->
+        <div class="video-container">
+            <video controls crossorigin>
+                <!-- Video files -->
+                <source src="/static/video/concern2.mp4" type="video/mp4">
+            </video>
+            <!--<div class="actions">
+                <button type="button" class="btn js-play">Play</button>
+                <button type="button" class="btn js-pause">Pause</button>
+                <button type="button" class="btn js-stop">Stop</button>
+                <button type="button" class="btn js-rewind">Rewind</button>
+                <button type="button" class="btn js-forward">Forward</button>
+            </div> -->
+        </div>
     </div>
 </section>
 
@@ -161,6 +191,8 @@
 <script src="/static/js/autism/jquery.localscroll-1.2.7-min.js"></script>
 <script src="/static/js/autism/stellar.min.js"></script>
 <script src="/static/js/autism/jquery.appear.min.js"></script>
+<script src="/static/js/plyr.js"></script>
+<script src="/static/js/welcome-plyr.js"></script>
 <script src="/static/js/autism/main.min.js"></script>
 
 </body>
